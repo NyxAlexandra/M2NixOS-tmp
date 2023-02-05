@@ -9,7 +9,7 @@
     stateVersion = "23.05";
     packages = with pkgs; [
       gnomeExtensions.blur-my-shell
-      hello
+      gnomeExtensions.just-perfection
     ];
   };
 }

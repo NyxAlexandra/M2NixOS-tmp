@@ -26,4 +26,6 @@
   security.rtkit.enable = true;
 
   system.stateVersion = "23.05";
+
+  systemd.services.zfs-mount.enable = false;
 }
