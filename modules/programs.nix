@@ -62,6 +62,7 @@
         alacritty
         wl-clipboard
         brightnessctl
+        pamixer
       ];
     };
     waybar.enable = true;
