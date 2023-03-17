@@ -41,6 +41,7 @@
       papirus-icon-theme
       vscode
       neovim
+      alacritty
     ];
   };
 }

@@ -31,5 +31,6 @@
     };
     flatpak.enable = true;
     auto-cpufreq.enable = true;
+    dbus.enable = true;
   };
 }

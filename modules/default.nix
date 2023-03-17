@@ -13,8 +13,10 @@
     ./nix.nix
     ./nixpkgs.nix
     ./programs.nix
+    ./security.nix
     ./services.nix
     ./users.nix
+    ./xdg.nix
   ];
 
   time.timeZone = "US/Eastern";
