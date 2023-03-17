@@ -46,6 +46,7 @@
       specialArgs = { inherit inputs system; };
       modules = [
         ./modules
+
         nixos-apple-silicon.nixosModules.default
         home-manager.nixosModules.home-manager
         
