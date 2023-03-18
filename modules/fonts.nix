@@ -12,7 +12,7 @@
     fontconfig.defaultFonts = {
       serif = [ "Noto Serif" "Source Han Serif" ];
       sansSerif = [ "Noto Sans" "Source Han Sans" ];
-      monospace = [ "NotoSansMono Nerd Font" ];
+      monospace = [ "NotoSansMono Nerd Font" "Noto Sans Mono" ];
     };
   };
 }
