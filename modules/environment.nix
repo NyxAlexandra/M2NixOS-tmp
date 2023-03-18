@@ -45,6 +45,7 @@
       rustup
       gcc
       pkg-config
+      zathura
     ];
   };
 }
