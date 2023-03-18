@@ -10,6 +10,7 @@
       "alex" = {
         isNormalUser = true;
         home = "/home/alex";
+        shell = pkgs.nushell;
         # Acquired with `mkpasswd -m SHA-512 -s`
         hashedPassword = "$6$7MuOYT/5OpYelUIp$ucjeHlCE11z7SgM.fd5c4CypNDnm4CEPWQ4ddwRO6ox44tFrdT76IclCD6f5n83yxwW7YGbTDCqlzZ6ZjpNIB.";
         extraGroups = [ "wheel" "video" "networkmanager" ];
