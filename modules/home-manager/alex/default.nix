@@ -1,8 +1,10 @@
 { pkgs, ... }: {
   imports = [
     ./programs
+
+    ./_config
   ];
-  
+
   home = {
     username = "alex";
     homeDirectory = "/home/alex";
@@ -12,6 +14,10 @@
       gnomeExtensions.just-perfection
     ];
 
+    # sets a singular cursor to use,
+    # resolves issues in which some
+    # applications draw an incorrect
+    # cursor
     pointerCursor = {
       name = "Adwaita";
       package = pkgs.gnome.adwaita-icon-theme;
@@ -23,3 +29,4 @@
     };
   };
 }
+
