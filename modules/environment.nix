@@ -42,6 +42,9 @@
       vscode
       neovim
       alacritty
+      rustup
+      gcc
+      pkg-config
     ];
   };
 }
