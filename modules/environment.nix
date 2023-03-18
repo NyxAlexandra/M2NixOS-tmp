@@ -46,6 +46,7 @@
       gcc
       pkg-config
       zathura
+      nyxt
     ];
   };
 }
