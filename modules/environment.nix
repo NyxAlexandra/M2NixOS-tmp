@@ -47,6 +47,7 @@
       pkg-config
       zathura
       nyxt
+      rust-analyzer
     ];
   };
 }
