@@ -49,6 +49,7 @@
       zathura
       nyxt
       rust-analyzer
+      foot
     ];
   };
 }
