@@ -655,3 +655,7 @@ alias m = mkdir
 alias r = rm
 alias t = touch
 
+alias e = $env.EDITOR
+
+alias nv = nvim
+
