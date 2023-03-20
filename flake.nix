@@ -19,39 +19,44 @@
     impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = {
-    nixpkgs,
-    nixos-apple-silicon, 
-    rust-overlay,
-    home-manager,
-    impermanence,
-    ...
-  } @ inputs: let
-    hostName = "M2NixOS";
-    system = "aarch64-linux";
-    pkgs = {
-      inherit system;
-      config = {
-        allowUnfree = true;
-        allowBroken = true; # TODO: Only allow ZFS kernel
-      };
-      overlays = [
-        rust-overlay.overlays.default
-        nixos-apple-silicon.overlays.default
-      ];
-    };
-  in {
-    nixosConfigurations."${hostName}" = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { inherit inputs system; };
-      modules = [
-        ./modules
+  outputs =
+    { nixpkgs
+    , nixos-apple-silicon
+    , rust-overlay
+    , home-manager
+    , impermanence
+    , ...
+    } @ inputs:
+    let
+      hostName = "M2NixOS";
+      system = "aarch64-linux";
+      pkgs = {
+        inherit system;
+        config = {
+          allowUnfree = true;
+          allowBroken = true; # TODO: Only allow ZFS kernel
+        };
+        overlays = [
+          rust-overlay.overlays.default
+          nixos-apple-silicon.overlays.default
 
-        nixos-apple-silicon.nixosModules.default
-        home-manager.nixosModules.home-manager
-        
-        impermanence.nixosModule
-      ];
+          ./pkgs
+        ];
+      };
+    in
+    {
+      nixosConfigurations."${hostName}" = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs system; };
+        modules = [
+          ./modules
+
+          nixos-apple-silicon.nixosModules.default
+          home-manager.nixosModules.home-manager
+
+          impermanence.nixosModule
+        ];
+      };
     };
-  };
 }
+
